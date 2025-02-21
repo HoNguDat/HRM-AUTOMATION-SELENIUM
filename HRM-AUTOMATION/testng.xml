@@ -1,7 +1,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
+    <parameter name="browserType" value="chrome"/>
+    <parameter name="appURL" value="http://localhost:3000/department-list"/>
     <test name="Department Tests">
         <classes>
+            <class name="testcases.LoginTest"/>
             <class name="testcases.DepartmentTest"/>
         </classes>
     </test>
