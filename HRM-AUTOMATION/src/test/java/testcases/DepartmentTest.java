@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.DepartmentPage;
 
@@ -17,6 +18,12 @@ public class DepartmentTest extends BaseTest {
     public void setUp() {
         driver = getDriver();
         departmentPage = new DepartmentPage(driver);
+    }
+
+    @Parameters("pagePath")
+    @BeforeMethod
+    public void navigateToPage(String pagePath) {
+        driver.get(baseUrl + pagePath);
     }
 
     @Test
